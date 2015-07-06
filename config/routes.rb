@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+
+  resources :cuisines, only: [:index, :show]
+  resources :recipes, only: [:show, :edit, :update, :destroy]
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

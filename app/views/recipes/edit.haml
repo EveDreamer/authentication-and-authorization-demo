@@ -1,0 +1,9 @@
+=form_for @recipe do |f|
+  %h4.ui.dividing.header='Update'
+  .field
+    = f.text_field :name, placeholder: 'Name'
+  .field
+    = f.text_area :ingredients, placeholder: 'Ingredients'
+  .field
+    = f.text_area :instructions, placeholder: 'Instructions'
+  = f.submit 'Update', class: 'ui button'

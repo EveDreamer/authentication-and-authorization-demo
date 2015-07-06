@@ -1,0 +1,7 @@
+.photos
+  =@cuisine.region
+  .ui.medium.images
+    - @recipes.each do |recipe|
+      = recipe.name
+      %span= link_to "Show Recipe", recipe_path(recipe)
+      %span= image_tag recipe.image
