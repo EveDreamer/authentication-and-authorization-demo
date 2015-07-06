@@ -1,0 +1,8 @@
+.ui.list
+  - @albums.each do |album|
+    .item
+      .ui.avatar.image
+        =image_tag album.image
+      .content
+        .header=album.title
+        .description=link_to 'See Album', album_path(album)

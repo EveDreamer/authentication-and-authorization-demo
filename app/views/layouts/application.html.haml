@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title='AuthenticationAndAuthorizationDemo'
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .ui.top.menu
+      .ui.container
+        .item
+          = link_to root_path do
+            %img{ src: 'http://s3.amazonaws.com/codecademy-content/courses/rails-auth/img/fotofoto-logo.svg', width: '80', height: '80'}
+        .right.menu
+          - if current_user
+            .item
+              = current_user.email
+            .item
+              %li= link_to 'Log out', logout_path, method: 'delete', class: 'ui button'
+          -else
+            .item
+              = link_to 'Login', 'login', class: 'ui button'
+            .item
+              = link_to 'Signup', 'signup', class: 'ui button'
+
+    = yield

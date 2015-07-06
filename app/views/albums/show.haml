@@ -1,0 +1,6 @@
+.photos
+  =@album.title
+  .ui.medium.images
+    - @photos.each do |photo|
+      =image_tag photo.image
+      %span= photo.caption
