@@ -1,0 +1,8 @@
+.ui.list
+  - @cuisines.each do |cuisine|
+    .item
+      .ui.avatar.image
+        =image_tag cuisine.image
+      .content
+        .header=cuisine.region
+        .description=link_to 'View Recipes', cuisine_path(cuisine)
