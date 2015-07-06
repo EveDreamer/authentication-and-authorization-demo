@@ -1,0 +1,14 @@
+.ui.cards
+  .card
+    .content
+      .right.floated.mini.ui.image=image_tag @recipe.image
+      .header= @recipe.name
+      .description
+        %p=@recipe.ingredients
+        %p=@recipe.instructions
+    .extra.content
+      .ui.two.buttons
+        - if current_user && current_user.editor?
+          = link_to 'Edit recipe', edit_recipe_path(@recipe), class: 'ui basic green button'
+        - if current_user && current_user.admin?
+          = link_to 'Delete', recipe_path(@recipe), method: 'delete', class: 'ui basic red button'
